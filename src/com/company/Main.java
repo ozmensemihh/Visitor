@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -11,5 +12,7 @@ public class Main {
 
         Path path = FileSystems.getDefault().getPath("Dır1");
         Files.walkFileTree(path,new FileName());
+        Path copyPath = FileSystems.getDefault().getPath("Dır1//Dır2");
+        Files.walkFileTree(copyPath,new CopyFile(path,copyPath));
     }
 }
